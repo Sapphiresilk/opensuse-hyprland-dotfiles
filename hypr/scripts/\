@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# rofi -show window for Hyprland, basically
+
+workspaces="$(hyprctl -j workspaces)"
+
+# get active workspace properties
+active_workspace="$(hyprctl -j activeworkspace)"
+active_ws_id="$(echo $active_workspace | gojq -r '.id')"
+active_ws_window_cnt="$(echo $active_workspace | gojq -r '.windows')"
+active_is_fullscreen="$(echo $active_workspace | gojq -r '.hasfullscreen')"
+active_last_window="$(echo $active_workspace | gojq -r '.lastwindowtitle')"
+
+# TODO there should be a window selective menu containing all existing hyprland workspaces
+workspace_list="$(echo "$workspaces" |
+  gojq -r '.[] | select(.monitor != -1 ) | "\[ \(.id) \]   windows:\(.windows)    is full screen:\(.hasfullscreen)    last window there:\(.lastwindowtitle)"' |
+    sed "s|$active_ws_id|<-\[ $active_ws_id \]->|" |
+    sort -r |
+    tofi --fuzzy-match true --prompt-text 'Go to workspace:'
+)"
+# TODO first workspace is currently active one
+# TODO middle is all the other workspaces
+# TODO end is add a new workspace and switch to a new one
+# TODO INSIDE each hyprland workspace there should be: Last window title, is fullscreen, how many windows there active_workspace
+# TODO on-click or pick, hyprland gotta switch to that workspace, if the current is selected, dont switch, if the new is selected, the len workspaces+1 workspace is created, if len 20, throw error and refuse to create the 21st 
