@@ -15,7 +15,7 @@ I Used `hy3` and `hyprexpo` plugins. The first will make hyprland behave like i3
 
 # Dependencies
 - `fish`
-- `hyprland`
+- `hyprland` and all hyprland related packages, even devel, also `hyprshot`, `hyprpaper` and so on
 - `neovim`
 - `git-core`
 - `qt6ct`
@@ -33,6 +33,10 @@ I Used `hy3` and `hyprexpo` plugins. The first will make hyprland behave like i3
 - `cmake`
 - `clang`
 - `brightnessctl`
+- `wofi`
+- `tofi`
+- `gojq`
+- you shall need nerd fonts too. I used Roboto Mono
 
 # Installation
 
