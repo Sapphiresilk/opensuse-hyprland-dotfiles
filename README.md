@@ -5,7 +5,10 @@ My hyprland dotfiles in case somebody needs
 This is a repository containing my dotfiles for OpenSUSE Tumbleweed Hyprland setup. Note this has not been created for "check out my rice" purposes. Only practical things.
 
 ## No Waybars and shit
-I do not use bars. This is just minimal setup. All data I can monitor with `btop` utility.
+I do not use bars. This is just "minimal" setup (although the dependencies section may terrify you). All data I can monitor with `btop` utility.
+
+## For those who would not mind a little bloatware
+If snaps and flatpaks bother you, dont install them then, but i want to. So this repo contains flatpak, snap, brew, cargo configuration
 
 ## Which Hyprland plugins?
 I Used `hy3` and `hyprexpo` plugins. The first will make hyprland behave like i3wm, the second will provide you a gnome/kde-like swiping up to see all your workspaces. **Note** that you will have to install lots of `devel` packages from Opensuse repos before being able to build `hy3` plugin. You should know that Opensuse splits its packages.  but we will talk about it later below.
@@ -15,7 +18,22 @@ I Used `hy3` and `hyprexpo` plugins. The first will make hyprland behave like i3
 - `hyprland`
 - `neovim`
 - `git-core`
-- ``
+- `qt6ct`
+- `ranger`
+- `pattern devel-basis`
+- `pattern devel-c++`
+- `sles3`
+- `sles2`
+- `libinput-devel`
+- `some small libs needed to build hyprland plugin`, i feel lazy to list them here, but you will know during the compilation what else system needs
+- `xdg-desktop-portal-gtk`
+- `xdg-desktop-portal-hyprland`
+- `btop`
+- `rust` - optional for my bloatware
+- `cmake`
+- `clang`
+- `brightnessctl`
+
 # Installation
 
 ## Prerequisites
@@ -30,6 +48,18 @@ I Used `hy3` and `hyprexpo` plugins. The first will make hyprland behave like i3
 2. When you try to install the plugins with the `hyprpm add <plugin>`, you will face compilation errors. Some lib missing or something. To see which lib is missing, you gotta input `hyprpm update -f -v`. This command will try to do several things: Download plugin repos again, compile them. During compilation process see for "build failed" and see what *.h or *.so, or *.cpp file is missing. You will have to have a lot of patience to google for a package that provide this lib. But do not worry, mostly, going to `yast` and searching for the keywords of a missing lib led me to its `devel` package so i installed it and so on. Try again. Until the compilation is successful. This was the hardest one.
 3. You will have everything needed for now.
 4. Copy all files from repo to your  ~/.config/ path, except this readme and licence ofc
+5. Move wallpapers to ~/Pictures
+6. run `chsh -s $(which fish)`
+
+
+# Bloatware
+
+If they created snaps and flatpaks, why dont we use them, isn't linux about freedom? So i decided to get support for as much software as i could.
+
+1. Go to yast and find `flatpak` related packages. You will need `flatpak`, `flatpak-remote-flathub`
+2. Go to snap page and install snap support, if you want. Dont forget to enable systemd services after installation.
+3. Visit Homebrew website and install brew, then add brew to PATH
+4. Install rust and add ~/.cargo/bin/ to PATH
 
 # Scripts 
 path: `~/.config/hypr/scripts`
