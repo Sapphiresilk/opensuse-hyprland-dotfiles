@@ -17,6 +17,8 @@ I Used `hy3` and `hyprexpo` plugins. The first will make hyprland behave like i3
 - `fish`
 - `hyprland` and all hyprland related packages, even devel, also `hyprshot`, `hyprpaper` and so on
 - `neovim`
+- `kitty`
+- `dunst`
 - `git-core`
 - `qt6ct`
 - `ranger`
