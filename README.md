@@ -14,9 +14,17 @@ If snaps and flatpaks bother you, dont install them then, but i want to. So this
 I Used `hy3` and `hyprexpo` plugins. The first will make hyprland behave like i3wm, the second will provide you a gnome/kde-like swiping up to see all your workspaces. **Note** that you will have to install lots of `devel` packages from Opensuse repos before being able to build `hy3` plugin. You should know that Opensuse splits its packages.  but we will talk about it later below.
 
 # Dependencies
+
+First, let's follow the official guide of hyprland dependencies (the ones for hyprland are needed for hypr plugins actually and they are the same) and install those dependencies:
+```bash
+zypper in gcc-c++ git meson cmake "pkgconfig(cairo)" "pkgconfig(egl)" "pkgconfig(gbm)" "pkgconfig(gl)" "pkgconfig(glesv2)" "pkgconfig(libdrm)" "pkgconfig(libinput)" "pkgconfig(libseat)" "pkgconfig(libudev)" "pkgconfig(pango)" "pkgconfig(pangocairo)" "pkgconfig(pixman-1)" "pkgconfig(vulkan)" "pkgconfig(wayland-client)" "pkgconfig(wayland-protocols)" "pkgconfig(wayland-scanner)" "pkgconfig(wayland-server)" "pkgconfig(xcb)" "pkgconfig(xcb-icccm)" "pkgconfig(xcb-renderutil)" "pkgconfig(xkbcommon)" "pkgconfig(xwayland)" "pkgconfig(xcb-errors)" glslang-devel Mesa-libGLESv3-devel tomlplusplus-devel
+```
+Then, install these:
+Go to yast2 and search for `hypr`. Install ALL packages containing `hypr`, but not containing `hypre`
 - `fish`
-- `hyprland` and all hyprland related packages, even devel, also `hyprshot`, `hyprpaper` and so on
+- `npm`
 - `neovim`
+- `hyprlang-devel`
 - `kitty`
 - `dunst`
 - `git-core`
@@ -24,9 +32,6 @@ I Used `hy3` and `hyprexpo` plugins. The first will make hyprland behave like i3
 - `ranger`
 - `pattern devel-basis`
 - `pattern devel-c++`
-- `sles3`
-- `sles2`
-- `libinput-devel`
 - `some small libs needed to build hyprland plugin`, i feel lazy to list them here, but you will know during the compilation what else system needs
 - `xdg-desktop-portal-gtk`
 - `xdg-desktop-portal-hyprland`
