@@ -25,6 +25,7 @@ Go to yast2 and search for `hypr`. Install ALL packages containing `hypr`, but n
 - `npm`
 - `neovim`
 - `hyprlang-devel`
+- `cmus`
 - `kitty`
 - `dunst`
 - `git-core`
