@@ -22,6 +22,7 @@ zypper in gcc-c++ git meson cmake "pkgconfig(cairo)" "pkgconfig(egl)" "pkgconfig
 Then, install these:
 Go to yast2 and search for `hypr`. Install ALL packages containing `hypr`, but not containing `hypre`
 - `fish`
+- `openvpn`
 - `npm`
 - `neovim`
 - `hyprlang-devel`
